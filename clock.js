@@ -5,6 +5,14 @@ let hrs = 0;
 let min = 0; 
 let sec = 0; 
 let d = new Date ();
+let day = 0;
+let month = 0;
+let year = 0;
+
+const monthNames = ["JAN", "FEB", "MARCH", "APRIL", "MAY", "JUNE",
+  "JULY", "AUG", "SEPT", "OCT", "NOV", "DEC"];
+
+const weekNames = ["SUNDAY", "MONDAY" , "TUESDAY" , "WEDNESDAY" , "THURSDAY" , "FRIDAY" , "SATURDAY" ];
 
 
 setInterval (
@@ -23,10 +31,19 @@ setInterval (
         document.getElementById("sec").innerHTML = d.getSeconds();
         document.getElementById("min").innerHTML = d.getMinutes();
 
+        document.getElementById("day").innerHTML = d.getDate();
+        document.getElementById("month").innerHTML = monthNames[d.getMonth()];
+        document.getElementById("year").innerHTML = d.getFullYear();
 
+        document.getElementById("weekday").innerHTML = weekNames[d.getDay()]
 
     }, 1000
 ) 
+
+
+
+
+
 
 
 
