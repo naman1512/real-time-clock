@@ -1,6 +1,9 @@
 let second = 0;
 let minute= 0;
 let hour = 0;
+let hrs = 0; 
+let min = 0; 
+let sec = 0; 
 let d = new Date ();
 
 
@@ -16,7 +19,14 @@ setInterval (
         document.getElementById("minute-hand").style.transform = "rotate(" + minute + "deg)";
         document.getElementById("hour-hand").style.transform = "rotate(" + hour + "deg)";
 
+        document.getElementById("hrs").innerHTML = d.getHours();
+        document.getElementById("sec").innerHTML = d.getSeconds();
+        document.getElementById("min").innerHTML = d.getMinutes();
+
 
 
     }, 1000
 ) 
+
+
+

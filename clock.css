@@ -136,6 +136,49 @@ body{
     transform-origin: bottom;
 }
 
+.container {
 
+    width: 1700px;
+    height: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+    
 
+}
 
+.digital-clock {
+    color: rgb(0, 0, 0); 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.digital-clock span {
+    font-size: 200px;
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+.digital-clock span::after {
+
+font-size: 20px;
+position: absolute;
+bottom: 25px;
+left: 58%;
+transform: translateX(-50%);
+}
+
+#hrs::after{
+    content: 'HOURS';
+}
+#sec::after{
+    content: 'SECONDS';
+}
+#min::after{
+    content: 'MINUTES';
+}
