@@ -1,28 +1,22 @@
-setInterval(setClock, 1000) // the setInterval function repeats itself for the given argumnet of time and variable
-
-const hourHand = document.querySelector('[data-hour-hand]')
-const minuteHand = document.querySelector('[data-minute-hand]')
-const secondHand = document.querySelector('[data-second-hand]')
-
+let second = 0;
+let minute= 0;
+let hour = 0;
+let d = new Date ();
 
 
+setInterval (
+    function(){
+        d = new Date ();
+        second = d.getSeconds() * 6;
+        minute = d.getMinutes() * 6;
+        hour = d.getHours() * 30 + Math.round(minute/12);
+      
 
-function setClock (){
-    const currentDate = new Date()
-    const secondsRatio = currentDate.getSeconds()/60
-    const minutesRatio = (secondsRatio + currentDate.getSeconds())/60
-    const hoursRatio = (minutesRatio + currentDate.getSeconds())/12
-
-    setRotation(secondHand, secondsRatio)
-    setRotation(hourHand, hoursRatio)
-    setRotation(minuteHand, minutesRatio)
-}
-
-function setRotation (element, rotationRatio) {
-     
-element.style.setProperty ('--rotation', rotationRatio * 360);
+        document.getElementById("second-hand").style.transform = "rotate(" + second + "deg)";
+        document.getElementById("minute-hand").style.transform = "rotate(" + minute + "deg)";
+        document.getElementById("hour-hand").style.transform = "rotate(" + hour + "deg)";
 
 
-}
 
-setClock();
+    }, 1000
+) 
